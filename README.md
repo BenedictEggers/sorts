@@ -1,4 +1,4 @@
 sorts
 =====
 
-Sorting algorithm comparisons
+Sorting algorithm comparisons, in Go.
