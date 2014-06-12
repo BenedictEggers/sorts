@@ -21,7 +21,9 @@ type sortFunc struct {
 
 var sortFuncs = []sortFunc{
 	{"bubblesort", bubbleSort},
-	{"selection sort", selectionSort}}
+	{"selection sort", selectionSort},
+	{"standard library sort", stdSort},
+}
 
 func TestSorts2Elements(t *testing.T) {
 	for _, s := range sortFuncs {
