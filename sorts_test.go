@@ -19,7 +19,9 @@ type sortFunc struct {
 	fn   func(sort.Interface)
 }
 
-var sortFuncs = []sortFunc{{"bubblesort", bubbleSort}}
+var sortFuncs = []sortFunc{
+	{"bubblesort", bubbleSort},
+	{"selection sort", selectionSort}}
 
 func TestSorts2Elements(t *testing.T) {
 	for _, s := range sortFuncs {
@@ -75,19 +77,19 @@ func runThreeTests(s sortFunc, n int, t *testing.T) {
 	ns := getDecreasingSlice(n)
 	s.fn(ns)
 	if !sort.IsSorted(ns) {
-		t.Error(s.name + " failed to sort " + string(n) + " decreasing elements")
+		t.Error(s.name+" failed to sort", n, "decreasing elements")
 	}
 
 	ns = getIncreasingSlice(n)
 	s.fn(ns)
 	if !sort.IsSorted(ns) {
-		t.Error(s.name + " failed to sort " + string(n) + " decreasing elements")
+		t.Error(s.name+" failed to sort", n, "increasing elements")
 	}
 
 	ns = getRandomSlice(n)
 	s.fn(ns)
 	if !sort.IsSorted(ns) {
-		t.Error(s.name + " failed to sort " + string(n) + " decreasing elements")
+		t.Error(s.name+" failed to sort", n, "random elements")
 	}
 }
 
