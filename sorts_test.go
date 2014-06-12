@@ -21,20 +21,52 @@ type sortFunc struct {
 
 var sortFuncs = []sortFunc{{"bubblesort", bubbleSort}}
 
-func TestSortsTwoElements(t *testing.T) {
+func TestSorts2Elements(t *testing.T) {
 	for _, s := range sortFuncs {
 		runThreeTests(s, 2, t)
 	}
 }
 
-func TestSortsThreeElements(t *testing.T) {
+func TestSorts3Elements(t *testing.T) {
 	for _, s := range sortFuncs {
 		runThreeTests(s, 3, t)
 	}
 }
 
-func TestSortsTenElements(t *testing.T) {
+func TestSorts10Elements(t *testing.T) {
+	for _, s := range sortFuncs {
+		runThreeTests(s, 10, t)
+	}
+}
 
+func TestSorts50Elements(t *testing.T) {
+		for _, s := range sortFuncs {
+		runThreeTests(s, 50, t)
+	}
+}
+
+func TestSorts100Elements(t *testing.T) {
+		for _, s := range sortFuncs {
+		runThreeTests(s, 100, t)
+	}
+}
+
+func TestSorts500Elements(t *testing.T) {
+		for _, s := range sortFuncs {
+		runThreeTests(s, 500, t)
+	}
+}
+
+func TestSorts1000Elements(t *testing.T) {
+		for _, s := range sortFuncs {
+		runThreeTests(s, 1000, t)
+	}
+}
+
+func TestSorts5000Elements(t *testing.T) {
+		for _, s := range sortFuncs {
+		runThreeTests(s, 5000, t)
+	}
 }
 
 // Helper functions
