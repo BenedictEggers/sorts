@@ -14,7 +14,7 @@ func bubbleSort(data sort.Interface) {
 	for keepGoing {
 		keepGoing = false
 		for i := 0; i < data.Len()-1; i++ {
-			if data.Less(i, i+1) {
+			if data.Less(i+1, i) {
 				data.Swap(i, i+1)
 				keepGoing = true
 			}
