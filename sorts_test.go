@@ -69,6 +69,6 @@ func getDecreasingSlice(n int) nums {
 }
 
 func getRandomSlice(n int) nums {
-	// Randomness is bad in tests, but whatever
+	rand.Seed(42)
 	return rand.Perm(n)
 }
