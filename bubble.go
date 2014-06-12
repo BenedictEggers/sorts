@@ -3,12 +3,9 @@
 
 package sorts
 
+import "sort"
+
 // Bubble sort
-
-import (
-	"sort"
-)
-
 func bubbleSort(data sort.Interface) {
 	keepGoing := true
 	for keepGoing {

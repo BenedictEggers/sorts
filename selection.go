@@ -6,7 +6,6 @@ package sorts
 import "sort"
 
 // Selection sort
-
 func selectionSort(data sort.Interface) {
 	n := data.Len()
 	for i := 0; i < n-1; i++ {
