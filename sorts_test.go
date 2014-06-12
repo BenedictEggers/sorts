@@ -40,31 +40,31 @@ func TestSorts10Elements(t *testing.T) {
 }
 
 func TestSorts50Elements(t *testing.T) {
-		for _, s := range sortFuncs {
+	for _, s := range sortFuncs {
 		runThreeTests(s, 50, t)
 	}
 }
 
 func TestSorts100Elements(t *testing.T) {
-		for _, s := range sortFuncs {
+	for _, s := range sortFuncs {
 		runThreeTests(s, 100, t)
 	}
 }
 
 func TestSorts500Elements(t *testing.T) {
-		for _, s := range sortFuncs {
+	for _, s := range sortFuncs {
 		runThreeTests(s, 500, t)
 	}
 }
 
 func TestSorts1000Elements(t *testing.T) {
-		for _, s := range sortFuncs {
+	for _, s := range sortFuncs {
 		runThreeTests(s, 1000, t)
 	}
 }
 
 func TestSorts5000Elements(t *testing.T) {
-		for _, s := range sortFuncs {
+	for _, s := range sortFuncs {
 		runThreeTests(s, 5000, t)
 	}
 }
