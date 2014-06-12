@@ -13,6 +13,7 @@ func (n nums) Less(i, j int) bool {
 	return n[i] > n[j]
 }
 func (n nums) Swap(i, j int) {
-	n[i] ^= n[j]
-	n[j] ^= n[i]
+	tmp := n[i]
+	n[i] = n[j]
+	n[j] = tmp
 }
