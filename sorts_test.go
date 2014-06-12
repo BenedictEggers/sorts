@@ -24,6 +24,7 @@ var sortFuncs = []sortFunc{
 	{"selection sort", selectionSort},
 	{"standard library sort", stdSort},
 	{"standard library stable sort", stdStableSort},
+	{"insertion sort", insertionSort},
 }
 
 func TestSorts2Elements(t *testing.T) {
