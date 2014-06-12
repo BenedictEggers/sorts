@@ -10,7 +10,7 @@ func (n nums) Len() int {
 	return len(n)
 }
 func (n nums) Less(i, j int) bool {
-	return n[i] < n[j]
+	return n[i] > n[j]
 }
 func (n nums) Swap(i, j int) {
 	n[i] ^= n[j]
