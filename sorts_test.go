@@ -21,12 +21,23 @@ type sortFunc struct {
 var sortFuncs = []sortFunc{{"bubblesort", bubbleSort}}
 
 func TestSortsTwoElements(t *testing.T) {
-	for _, sort := range sortFuncs {
+	for _, s := range sortFuncs {
 		n := nums{2, 1}
-		sort.fn(n)
-		if n[0] == 2 {
+		s.fn(n)
+		if !sort.IsSorted(n) {
 			// Didn't swap the elements
-			t.Error(sort.name + " failed to sort 2 elements")
+			t.Error(s.name + " failed to sort 2 elements")
+		}
+	}
+}
+
+func TestSortsThreeElements(t *testing.T) {
+	for _, s := range sortFuncs {
+		n := nums{2, 1, 5}
+		s.fn(n)
+		if !sort.IsSorted(n) {
+			// Didn't swap the elements
+			t.Error(s.name + " failed to sort 3 elements")
 		}
 	}
 }
