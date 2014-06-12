@@ -23,6 +23,7 @@ var sortFuncs = []sortFunc{
 	{"bubblesort", bubbleSort},
 	{"selection sort", selectionSort},
 	{"standard library sort", stdSort},
+	{"standard library stable sort", stdStableSort},
 }
 
 func TestSorts2Elements(t *testing.T) {
