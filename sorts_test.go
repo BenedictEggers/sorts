@@ -6,9 +6,9 @@
 package sorts
 
 import (
+	"math/rand"
 	"sort"
 	"testing"
-	"math/rand"
 )
 
 // We declare this type so we can have a slice of functions (making it easy to
@@ -23,23 +23,13 @@ var sortFuncs = []sortFunc{{"bubblesort", bubbleSort}}
 
 func TestSortsTwoElements(t *testing.T) {
 	for _, s := range sortFuncs {
-		n := nums{2, 1}
-		s.fn(n)
-		if !sort.IsSorted(n) {
-			// Didn't swap the elements
-			t.Error(s.name + " failed to sort 2 elements")
-		}
+		runThreeTests(s, 2, t)
 	}
 }
 
 func TestSortsThreeElements(t *testing.T) {
 	for _, s := range sortFuncs {
-		n := nums{2, 1, 5}
-		s.fn(n)
-		if !sort.IsSorted(n) {
-			// Didn't swap the elements
-			t.Error(s.name + " failed to sort 3 elements")
-		}
+		runThreeTests(s, 3, t)
 	}
 }
 
@@ -47,10 +37,27 @@ func TestSortsTenElements(t *testing.T) {
 
 }
 
-
-
-
 // Helper functions
+
+func runThreeTests(s sortFunc, n int, t *testing.T) {
+	ns := getDecreasingSlice(n)
+	s.fn(ns)
+	if !sort.IsSorted(ns) {
+		t.Error(s.name + " failed to sort " + string(n) + " decreasing elements")
+	}
+
+	ns = getIncreasingSlice(n)
+	s.fn(ns)
+	if !sort.IsSorted(ns) {
+		t.Error(s.name + " failed to sort " + string(n) + " decreasing elements")
+	}
+
+	ns = getRandomSlice(n)
+	s.fn(ns)
+	if !sort.IsSorted(ns) {
+		t.Error(s.name + " failed to sort " + string(n) + " decreasing elements")
+	}
+}
 
 func getIncreasingSlice(n int) nums {
 	retVal := make(nums, n)
@@ -63,7 +70,7 @@ func getIncreasingSlice(n int) nums {
 func getDecreasingSlice(n int) nums {
 	retVal := make(nums, n)
 	for i := 0; i < n; i++ {
-		retVal[n - i - 1] = i
+		retVal[n-i-1] = i
 	}
 	return retVal
 }
