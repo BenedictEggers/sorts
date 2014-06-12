@@ -8,6 +8,7 @@ package sorts
 import (
 	"sort"
 	"testing"
+	"math/rand"
 )
 
 // We declare this type so we can have a slice of functions (making it easy to
@@ -40,4 +41,34 @@ func TestSortsThreeElements(t *testing.T) {
 			t.Error(s.name + " failed to sort 3 elements")
 		}
 	}
+}
+
+func TestSortsTenElements(t *testing.T) {
+
+}
+
+
+
+
+// Helper functions
+
+func getIncreasingSlice(n int) nums {
+	retVal := make(nums, n)
+	for i := 0; i < n; i++ {
+		retVal[i] = i
+	}
+	return retVal
+}
+
+func getDecreasingSlice(n int) nums {
+	retVal := make(nums, n)
+	for i := 0; i < n; i++ {
+		retVal[n - i - 1] = i
+	}
+	return retVal
+}
+
+func getRandomSlice(n int) nums {
+	// Randomness is bad in tests, but whatever
+	return rand.Perm(n)
 }
